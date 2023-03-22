@@ -4,7 +4,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-image: url(img/25501.jpg);
+    background-image: url(img/day/cloudy-day.jpg);
     background-size: cover;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -16,7 +16,7 @@ main {
     
 }
 h1 {
-    
+    font-size: 2rem;
 }
 #card {
     background-color: rgba(95, 79, 211, 0.836);
