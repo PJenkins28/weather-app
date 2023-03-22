@@ -4,10 +4,23 @@
 body {
     padding: 0;
     margin: 0;
+    background-image: url(img/25501.jpg);
+    background-size: cover;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 main {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+    
+}
+h1 {
+    
+}
+#card {
+    background-color: rgba(95, 79, 211, 0.836);
+    
 }
 .current-day,.week-forecast {
     width: 100%;
@@ -15,6 +28,15 @@ main {
 .current-day {
     border: 2px solid green;
     height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.current-info{
+    /* border: 2px solid rgb(250, 250, 250); */
+    width: 300px;
+    height: 80%;
 }
 .week-forecast {
     border: 2px solid purple;
@@ -25,7 +47,7 @@ main {
     flex-wrap: wrap;
 }
 .day-card {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 80%;
     width: 200px;
     flex-shrink: 0;

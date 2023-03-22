@@ -4,7 +4,7 @@ let temp = document.getElementById("temp");
 
 async function getCity() {
   const response = await fetch(
-    "http://api.weatherapi.com/v1/current.json?key=81c7026d69634f71bea131013232003&q=atlanta&aqi=no"
+    "http://api.weatherapi.com/v1/current.json?key=81c7026d69634f71bea131013232003&q=sevilla&aqi=no"
   );
   const cityData = await response.json();
 
