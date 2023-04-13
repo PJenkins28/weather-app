@@ -6,7 +6,7 @@ body {
     margin: 0;
     background-image: url(img/day/cloudy-day.jpg);
     background-size: cover;
-    color: white;
+    color: rgb(56, 54, 59);
     font-family: 'Montserrat', sans-serif;
 }
 main {
@@ -16,16 +16,20 @@ main {
     
 }
 h1 {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 #card {
-    background-color: rgba(182, 182, 187, 0.836);
+    background-color: rgba(214, 214, 219, 0.836);
     border-radius: .75rem;
     box-shadow: 6px 3px 28px -10px rgba(53,50,54,1);
     
 }
 .current-day,.week-forecast {
     width: 100%;
+}
+#weather-summary {
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 .current-day {
     border: 2px solid green;
@@ -39,6 +43,32 @@ h1 {
     /* border: 2px solid rgb(250, 250, 250); */
     width: 300px;
     height: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 1rem;
+}
+.cur-temp {
+    align-self: center;
+    font-size: 5rem;
+    font-weight: bold;
+    order: 3;
+}
+.detailed-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: start;
+    padding: 0 20px;
+    font-size: .9rem;
+    font-weight: bold;
+}
+.icon {
+    width: 100px;
+    height: 100px;
+    align-self: center;
+    padding: 0;
+    margin: 0;
 }
 .week-forecast {
     border: 2px solid purple;

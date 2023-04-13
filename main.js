@@ -5,7 +5,7 @@ let currCard = document.querySelector(".current-info");
 
 async function getCity() {
   const response = await fetch(
-    "http://api.weatherapi.com/v1/forecast.json?key=81c7026d69634f71bea131013232003&q=Sevilla&days=7&aqi=no&alerts=no"
+    "http://api.weatherapi.com/v1/forecast.json?key=81c7026d69634f71bea131013232003&q=sevilla&days=7&aqi=no&alerts=no"
   );
   const cityData = await response.json();
 
@@ -20,6 +20,12 @@ function getCurrent(cityData) {
   curTemp.classList.add("cur-temp");
   currCard.appendChild(curTemp);
   curTemp.textContent = cityData.current.temp_f;
+
+  // icon
+  let icon = document.createElement("img");
+  icon.classList.add("icon");
+  currCard.appendChild(icon);
+  icon.src = cityData.current.condition.icon;
 
   // detailed info
   // feels like temp
@@ -41,6 +47,6 @@ function getCurrent(cityData) {
   // Humidity
   let humidity = document.createElement("div");
   detailedInfo.appendChild(humidity);
-  humidity.textContent = `Humidity ${cityData.current.humidity}`;
+  humidity.textContent = `Humidity ${cityData.current.humidity}%`;
 }
 getCity();
