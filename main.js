@@ -5,27 +5,21 @@ let currCard = document.querySelector(".current-info");
 
 async function getCity() {
   const response = await fetch(
-    "http://api.weatherapi.com/v1/forecast.json?key=81c7026d69634f71bea131013232003&q=sevilla&days=7&aqi=no&alerts=no"
+    "http://api.weatherapi.com/v1/forecast.json?key=81c7026d69634f71bea131013232003&q=boston&days=7&aqi=no&alerts=no"
   );
   const cityData = await response.json();
 
-  cityName.textContent = `${cityData.location.name}, ${cityData.location.country}`;
+  cityName.textContent = `${cityData.location.name}`;
   feelsLike.textContent = cityData.current.condition.text;
 
   getCurrent(cityData);
 }
 function getCurrent(cityData) {
   // current temp
-  let curTemp = document.createElement("div");
-  curTemp.classList.add("cur-temp");
-  currCard.appendChild(curTemp);
-  curTemp.textContent = cityData.current.temp_f;
+  getCurrentTemp(cityData);
 
   // icon
-  let icon = document.createElement("img");
-  icon.classList.add("icon");
-  currCard.appendChild(icon);
-  icon.src = cityData.current.condition.icon;
+  getCurrentIcon(cityData);
 
   // detailed info
   // feels like temp
@@ -49,4 +43,18 @@ function getCurrent(cityData) {
   detailedInfo.appendChild(humidity);
   humidity.textContent = `Humidity ${cityData.current.humidity}%`;
 }
+function getCurrentTemp(cityData) {
+  // Gets temperature in F for current day
+  let curTemp = document.createElement("div");
+  curTemp.classList.add("cur-temp");
+  currCard.appendChild(curTemp);
+  curTemp.textContent = `${cityData.current.temp_f}°`;
+}
+function getCurrentIcon(cityData) {
+  let icon = document.createElement("img");
+  icon.classList.add("icon");
+  currCard.appendChild(icon);
+  icon.src = cityData.current.condition.icon;
+}
+
 getCity();
