@@ -86,3 +86,27 @@ h1 {
     flex-shrink: 0;
 
 }
+form {
+    display: flex;
+    align-self: center;
+    gap: 1rem;
+}
+input[type=text] {
+    width: 450px;
+    height: 30px;
+    border-radius: .5rem;
+    box-shadow:rgba(214, 214, 219, 0.836);
+    background-color: rgba(210, 212, 213, 0.611);
+    color:rgb(35, 34, 34);
+    font-family: sans-serif;
+}
+input:focus {
+    outline: none;
+}
+input[type=button] {
+    width: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    border-radius: .5rem;
+    background-color: rgba(210, 212, 213, 0.611);
+}

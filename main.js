@@ -2,10 +2,11 @@ let cityName = document.getElementById("city-name");
 let feelsLike = document.getElementById("feels-like");
 // let temp = document.getElementById("temp");
 let currCard = document.querySelector(".current-info");
+let city = `sevilla`;
 
 async function getCity() {
   const response = await fetch(
-    "http://api.weatherapi.com/v1/forecast.json?key=81c7026d69634f71bea131013232003&q=boston&days=7&aqi=no&alerts=no"
+    `http://api.weatherapi.com/v1/forecast.json?key=81c7026d69634f71bea131013232003&q=${city}&days=7&aqi=no&alerts=no`
   );
   const cityData = await response.json();
 
