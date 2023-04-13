@@ -1,15 +1,46 @@
 let cityName = document.getElementById("city-name");
 let feelsLike = document.getElementById("feels-like");
-let temp = document.getElementById("temp");
+// let temp = document.getElementById("temp");
+let currCard = document.querySelector(".current-info");
 
 async function getCity() {
   const response = await fetch(
-    "http://api.weatherapi.com/v1/current.json?key=81c7026d69634f71bea131013232003&q=sevilla&aqi=no"
+    "http://api.weatherapi.com/v1/forecast.json?key=81c7026d69634f71bea131013232003&q=Sevilla&days=7&aqi=no&alerts=no"
   );
   const cityData = await response.json();
 
-  cityName.textContent = `${cityData.location.name}, ${cityData.location.region}`;
+  cityName.textContent = `${cityData.location.name}, ${cityData.location.country}`;
   feelsLike.textContent = cityData.current.condition.text;
-  temp.textContent = cityData.current.temp_f;
+
+  getCurrent(cityData);
+}
+function getCurrent(cityData) {
+  // current temp
+  let curTemp = document.createElement("div");
+  curTemp.classList.add("cur-temp");
+  currCard.appendChild(curTemp);
+  curTemp.textContent = cityData.current.temp_f;
+
+  // detailed info
+  // feels like temp
+  let feelTemp = document.createElement("div");
+  let detailedInfo = document.querySelector(".detailed-info");
+  detailedInfo.appendChild(feelTemp);
+  feelTemp.textContent = `Feels like ${cityData.current.feelslike_f}`;
+
+  // visibility
+  let visibility = document.createElement("div");
+  detailedInfo.appendChild(visibility);
+  visibility.textContent = `Visibility is ${cityData.current.vis_miles} miles`;
+
+  // wind speed
+  let windSpeed = document.createElement("div");
+  detailedInfo.appendChild(windSpeed);
+  windSpeed.textContent = `Wind ${cityData.current.wind_mph}mph ${cityData.current.wind_dir}`;
+
+  // Humidity
+  let humidity = document.createElement("div");
+  detailedInfo.appendChild(humidity);
+  humidity.textContent = `Humidity ${cityData.current.humidity}`;
 }
 getCity();

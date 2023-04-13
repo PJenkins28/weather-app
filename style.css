@@ -19,7 +19,9 @@ h1 {
     font-size: 2rem;
 }
 #card {
-    background-color: rgba(95, 79, 211, 0.836);
+    background-color: rgba(182, 182, 187, 0.836);
+    border-radius: .75rem;
+    box-shadow: 6px 3px 28px -10px rgba(53,50,54,1);
     
 }
 .current-day,.week-forecast {
