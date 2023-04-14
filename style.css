@@ -42,7 +42,7 @@ h1 {
 .current-info{
     /* border: 2px solid rgb(250, 250, 250); */
     width: 350px;
-    height: 60%;
+    height: 50%;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
