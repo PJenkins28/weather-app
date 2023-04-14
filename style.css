@@ -4,7 +4,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-image: url(img/day/cloudy-day.jpg);
+    background-image: url(img/day/sunny-day.jpg);
     background-size: cover;
     color: rgb(56, 54, 59);
     font-family: 'Montserrat', sans-serif;
@@ -24,7 +24,7 @@ h1 {
     box-shadow: 6px 3px 28px -10px rgba(53,50,54,1);
     
 }
-.current-day,.week-forecast {
+.current-day{
     width: 100%;
 }
 #weather-summary {
@@ -71,21 +71,7 @@ h1 {
     padding: 0;
     margin: 0;
 }
-.week-forecast {
-    /* border: 2px solid purple; */
-    height: 30vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.day-card {
-    /* border: 2px solid red; */
-    height: 80%;
-    width: 200px;
-    flex-shrink: 0;
 
-}
 form {
     display: flex;
     align-self: center;
@@ -110,3 +96,20 @@ input[type=button] {
     border-radius: .5rem;
     background-color: rgba(210, 212, 213, 0.611);
 }
+
+/* classes for weekly forecast - leaving off for now 
+.week-forecast {
+    border: 2px solid purple;
+    height: 30vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.day-card {
+    border: 2px solid red;
+    height: 80%;
+    width: 200px;
+    flex-shrink: 0;
+
+} */

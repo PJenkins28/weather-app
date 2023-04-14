@@ -1,6 +1,6 @@
 // Declare global variables
-let cityName = document.getElementById("city-name");
-let feelsLike = document.getElementById("feels-like");
+const cityName = document.getElementById("city-name");
+const feelsLike = document.getElementById("feels-like");
 let currCard = document.querySelector(".current-info");
 let detailedInfo = document.querySelector(".detailed-info");
 const btn = document.getElementById("search-btn");
@@ -103,8 +103,8 @@ function displayGreeting(cityData) {
 
 // Clears currCard when renderCurrent() renders new city info
 function clearCurrent() {
-  currCard.innerHTML = "";
-  detailedInfo.innerHTML = "";
+  currCard.textContent = "";
+  detailedInfo.textContent = "";
 
   // Create new detailedInfo element which was deleted
   detailedInfo = document.createElement("div");
